@@ -4,6 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+		<script>
+			let idTablero = sessionStorage.getItem("idTablero");
+			console.log("El valor de idTablero: " + idTablero);
+		</script>
+
+		<!-- Browser tab icon -->
+		<link rel="icon" type="image/png" href="img/icoDonut.png" />
+
 		<!-- //*Hojas de estilo -->
 		<link rel="stylesheet" href="css/bootstrap.css" />
 		<link rel="stylesheet" href="css/sweetalert2.css" />
@@ -48,23 +56,23 @@
 		<title>Protocolo estandarizado</title>
 	</head>
 
-	<body>
-		<header>
-			<nav class="bg-secondary">
-				<ul class="nav justify-content-end">
-					<li class="nav-item">
-						<a class="nav-link text-light" href="index.html">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-light" href="aForm.html">Protocolo</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link text-light" href="reporte.html">Reportes</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
+	<header>
+		<nav class="bg-secondary">
+			<ul class="nav justify-content-end">
+				<li class="nav-item">
+					<a class="nav-link text-light" href="index.html">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-light" href="aForm.html">Protocolo</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-light" href="reporte.html">Reportes</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
 
+	<body>
 		<div class="container mt-5">
 			<h1 class="text-info mt-n3">Reporte de pruebas</h1>
 		</div>

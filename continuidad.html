@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<script>
+		let idTablero = sessionStorage.getItem('idTablero');
+		console.log('El valor de idTablero: ' + idTablero);
+	</script>
+
+	<!-- Browser tab icon -->
+	<link rel="icon" type="image/png" href="img/icoDonut.png">
+
+	<!-- Hojas de estilo -->
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="css/sweetalert2.css" />
+	<link rel="stylesheet" href="css/style.css" />
+
+	<!-- Iconos Font awesome -->
+	<script src="js/7a23168b1e.js" crossorigin="anonymous"></script>
+
+	<title>Continuidad</title>
+</head>
+
+<header>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">Protocolo estandarizado</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+			aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"> - </span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="#"> - </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Home </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="seguridad.html">Seguridad </span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="inspeccion.html">Inspeccion </span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="torques.html">Torques</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="continuidad.html">Continuidad</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="aislamiento.html">Aislamiento</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="hipot.html">Alta tension</a>
+				</li>
+			</ul>
+			<!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+		</div>
+	</nav>
+</header>
+
+<body>
+	<div id="app">
+
+		<!-- TODO: Modificar la interface de pagina para que se ajuste a los valeres de la tabla continuidad -->
+
+		<div class="container">
+			<br>
+			<h4 style="color:#446173"><i class="fab fa-squarespace"></i> CONTINUIDAD EN CIRCUITOS </h4>
+			<hr>
+
+			<div class="mx-auto">
+				<div class=" alert alert-warning" role="alert">
+					<strong>La prueba de continuidad debe considerar los siguientes parametros:</strong> </br>
+					Tiempo de prueba: ± 5 seg. </br>
+					Resitencia: ~200 mA </br>
+					Salida: ~200 mA
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="mx-auto">
+					<label for="validationCustom07">Instalacion conforme a DU</label>
+					<select class="custom-select" id="validationCustom07" required>
+						<option selected disabled value="">Seleccione...</option>
+						<option>SI al 100%</option>
+						<option>INCOMPLETO</option>
+						<option>NO</option>
+					</select>
+					<div class="invalid-feedback">
+						Seleccione resultado de pruebas.
+					</div>
+				</div>
+				<div class="mx-auto">
+					<label for="validationCustom07">Resultado de la prueba</label>
+					<select class="custom-select" id="validationCustom07" required>
+						<option selected disabled value="">Seleccione...</option>
+						<option>APROBADO</option>
+						<option>NO APROBADO</option>
+						<option>INCOMPLETO</option>
+					</select>
+					<div class="invalid-feedback">
+						Seleccione resultado de pruebas.
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container mb-2">
+			<div class="row mt-3">
+				<div class="col-auto ml-auto mt-3">
+					<a class="p-1 bg-warning text-dark" onclick="addComment()">
+						<i class="far fa-comments"></i>
+						Comentarios
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- botones de formulario -->
+		<div class="container">
+			<div class="d-flex justify-content-end">
+				<div class="p-2">
+					<button class="btn btn-outline-primary" title="Almacenar formulario"
+						@click="btnSave('continuidad')">
+						<i class="fas fa-hdd"></i>
+						Guardar
+					</button>
+				</div>
+				<div class="pt-2">
+					<button class="btn btn-outline-dark" onclick="window.location.href = 'aislamiento.html';">
+						<i class="far fa-arrow-alt-circle-right" style="color: rgb(179, 9, 3)"></i>
+						Prueba de Aislamiento
+					</button>
+				</div>
+			</div>
+
+		</div> <!-- fin botnoes del fornulario -->
+
+		<div id="newComment" hidden>
+
+			<!-- Seccion para ingresar un comentario por etapa de revision en el proceso a cada tablero
+				Se crea y destruye de forma dinamica los campos responsable y comentario
+			Inicia oculto, al momento de presionar el globo "Comentarios" funciona como un toggle  -->
+			<div class="container mb-5">
+				<div class="d-flex justify-content-end">
+					<div class="p-2">
+						<button class="btn btn-primary" title="Almacenar formulario" @click="btnComment('continuidad')">
+							<i class="far fa-hdd"></i>
+							Guardar
+						</button>
+					</div>
+					<div class="d-flex justify-content-center">
+						<div class="p-2">
+							<button class="btn btn-danger" title="Enviar comentarios por mail"
+								@click="btnMail('no salgas')">
+								<i class="far fa-paper-plane"></i>
+								Enviar mail
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div> <!-- fin app -->
+
+	<!-- //*Carga de los script UX -->
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/sweetalert2.js"></script>
+
+	<!-- //*Script Vue -->
+	<!-- production version, optimized for size and speed -->
+	<script src="js/vue.js"></script>
+
+	<!-- //*Conexion Axios -->
+	<script src="js/axios.js"></script>
+
+	<!-- //*Script personalizado -->
+	<script src="js/main.js"></script>
+	<script src="js/clone.js"></script>
+</body>
+
+</html>

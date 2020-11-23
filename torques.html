@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<script>
+		let idTablero = sessionStorage.getItem('idTablero');
+		console.log('El valor de idTablero: ' + idTablero);
+	</script>
+
+	<!-- Browser tab icon -->
+	<link rel="icon" type="image/png" href="img/icoDonut.png">
+
+	<!-- Hojas de estilo -->
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="css/sweetalert2.css" />
+	<link rel="stylesheet" href="css/style.css" />
+
+	<!-- Iconos Font awesome -->
+	<script src="js/7a23168b1e.js" crossorigin="anonymous"></script>
+
+	<style>
+		th,
+		td {
+			text-align: center;
+		}
+
+		.bd-callout-warning {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 1.5;
+			color: #212529;
+			text-align: left;
+			box-sizing: border-box;
+			padding: 1.25rem;
+			margin-top: 1.25rem;
+			margin-bottom: 1.25rem;
+			border: 1px solid #eee;
+			border-left-width: .25rem;
+			border-radius: .25rem;
+			border-left-color: #f0ad4e;
+		}
+
+		#dealing-with-specificity {
+			text-align: left;
+			box-sizing: border-box;
+			font-family: inherit;
+			font-weight: 500;
+			line-height: 1.2;
+			font-size: 1.5rem;
+			margin-top: 0;
+			margin-bottom: .25rem;
+			color: #17a2b8;
+		}
+	</style>
+
+	<title>Torques requeridos</title>
+</head>
+
+<header>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">Protocolo estandarizado</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+			aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"> - </span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="#"> - </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Home </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="seguridad.html">Seguridad </span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="inspeccion.html">Inspeccion </span></a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="torques.html">Torques</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="continuidad.html">Continuidad</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="aislamiento.html">Aislamiento</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="hipot.html">Alta tension</a>
+				</li>
+			</ul>
+			<!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+		</div>
+	</nav>
+</header>
+
+<body>
+	<div class="container">
+		<h4 style="color:#446173"><i class="fas fa-wrench"></i> TORQUES </h4>
+		<hr>
+		<div class="bd-callout-warning">
+			<div class="mx-auto">
+
+				<ul>
+					<h5>Torques a barras o zapatas en interruptores</h5>
+					<li class="list-group-item">
+						<br>
+						<h5 class="text-warning">Tabla de apriete a interruptores ABB.</h5>
+						<table class="table table-md table-hover border">
+							<thead class="bg-warning text-dark">
+								<tr>
+									<th scope="col">
+										Tipo de interruptor
+									</th>
+									<th scope="col">
+										Torque sugerido (Nm)
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										Interruptor de caja moldeada (T1, XT1)
+									</td>
+									<td>
+										7.0 AL - 7.2 CU
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Interruptor de caja moldeada (T3, T4, XT3, XT4)
+									</td>
+									<td>
+										10.0 AL - 10.2 CU
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Interruptor de caja moldeada (T5)
+									</td>
+									<td>
+										25.0 AL - 25.2 CU
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Interruptor de caja moldeada (T6, T7)
+									</td>
+									<td>
+										43.0 AL - 43.2 CU
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Interruptor EMAX 2 E1.2, E2.2
+									</td>
+									<td>
+										43.0 CU
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</li>
+					<br><br>
+					<h5>Torques sobre bus pricipal o emplames de barra</h5>
+					<li class="list-group-item">
+						<br>
+						<h5 class="text-warning">Tabla de apriete en barras de hasta 65kA.</h5>
+						<table class="table table-md table-hover border">
+							<thead class="bg-warning text-dark">
+								<tr>
+									<th scope="col">
+										Barras
+									</th>
+									<th scope="col">
+										Torque sugerido (Nm)
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										4 tornillos de 1/2 pulg. diametro
+									</td>
+									<td>
+										28.0
+									</td>
+								</tr>
+								<tr>
+									<td>
+										4 tornillos de 5/16 pulg. diametro
+									</td>
+									<td>
+										17.6
+									</td>
+								</tr>
+								<tr>
+									<td>
+										4 tornillos de 3/8 pulg. diametro
+									</td>
+									<td>
+										21.1
+									</td>
+								</tr>
+								<tr>
+									<td>
+										4 tornillos de 5/8 pulg. diametro
+									</td>
+									<td>
+										35.2
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Tornillos de 1/4 pulg. diametro
+									</td>
+									<td>
+										14.1
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Tornillos de 7/16 pulg. diametro
+									</td>
+									<td>
+										24.6
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="app">
+
+		<!-- Aqui se agregan o se destruyen la nueva seccion de los tableros, tambien comentarios  -->
+		<div class="container">
+			<div class="row mt-3">
+				<div class="col-md-6 mr-auto">
+					<input class="form-check-input" type="checkbox" id="Check1">
+					<label class="form-check-label" for="Check1"> ¿Se cumple con los torques correspondientes?</label>
+				</div>
+				<div class="col-auto mb-3">
+					<a alt="Add comments" class="p-1 bg-warning text-dark" onclick="addComment('seguridad')">
+						<i class="far fa-comments"></i>
+						Comentarios
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- botones de formulario -->
+		<div class="container mb-5">
+			<div class="d-flex justify-content-end">
+				<div class="p-2">
+					<button class="btn btn-outline-primary" title="secondaryAlmacenar formulario"
+						@click="btnSave('torques')">
+						<i class="fas fa-hdd"></i>
+						Guardar
+					</button>
+				</div>
+				<div class="p-2">
+					<button class="btn btn-outline-dark" onclick="window.location.href = 'continuidad.html';">
+						<i class="far fa-arrow-alt-circle-right" style="color: rgb(179, 9, 3)"></i>
+						Revisar continuidad
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- fin botnoes del fornulario -->
+
+		<div id="newComment" hidden>
+			<div class="container mb-5">
+				<div class="d-flex justify-content-end">
+					<div class="p-2">
+						<button class="btn btn-primary" title="Almacenar formulario" @click="btnComment('torques')">
+							<i class="far fa-hdd"></i>
+							Guardar
+						</button>
+					</div>
+					<div class="d-flex justify-content-center">
+						<div class="p-2">
+							<button class="btn btn-danger" title="Enviar comentarios por mail"
+								@click="btnMail('no salgas')">
+								<i class="far fa-paper-plane"></i>
+								Enviar mail
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div> <!-- app end -->
+
+	<!-- //*Carga de los script UX -->
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/sweetalert2.js"></script>
+
+	<!-- //*Script Vue -->
+	<!-- production version, optimized for size and speed -->
+	<script src="js/vue.js"></script>
+
+	<!-- //*Conexion Axios -->
+	<script src="js/axios.js"></script>
+
+	<!-- //*Script personalizado -->
+	<script src="js/main.js"></script>
+	<script src="js/clone.js"></script>
+</body>
+
+</html>

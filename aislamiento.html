@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+	<script>
+		let idTablero = sessionStorage.getItem("idTablero");
+		console.log("El valor de idTablero: " + idTablero);
+	</script>
+
+	<!-- Browser tab icon -->
+	<link rel="icon" type="image/png" href="img/icoDonut.png" />
+
+	<!-- Hojas de estilo -->
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="css/sweetalert2.css" />
+	<link rel="stylesheet" href="css/style.css" />
+
+	<!-- Iconos Font awesome -->
+	<script src="js/7a23168b1e.js" crossorigin="anonymous"></script>
+
+	<title>Aislamiento</title>
+</head>
+
+<header>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">Protocolo estandarizado</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+			aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"> - </span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="#"> - </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Home </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="seguridad.html">Seguridad </span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="inspeccion.html">Inspeccion </span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="torques.html">Torques</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="continuidad.html">Continuidad</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="aislamiento.html">Aislamiento</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="hipot.html">Alta tension</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</header>
+
+<body>
+	<div id="app">
+		<div class="container">
+			<div class="parent mt-5">
+				<div class="form-row">
+					<div class="col-md-4 mb-3">
+						<label for="seccionTablero">Seccion de tablero</label>
+						<input type="text" class="form-control" id="seccionTablero-1" />
+					</div>
+					<div class="col-md-2 mb-3">
+						<label for="N">N</label>
+						<input type="text" class="form-control" id="N-1" placeholder="MΩ" />
+					</div>
+					<div class="col-md-2 mb-3">
+						<label for="L1">L1</label>
+						<input type="text" class="form-control" id="L1-1" placeholder="MΩ" />
+					</div>
+					<div class="col-md-2 mb-3">
+						<label for="L2">L2</label>
+						<input type="text" class="form-control" id="L2-1" placeholder="MΩ" />
+					</div>
+					<div class="col-md-2 mb-3">
+						<label for="L3">L3</label>
+						<input type="text" class="form-control" id="L3-1" placeholder="MΩ" />
+					</div>
+				</div>
+			</div>
+			<!-- fin class="padre" -->
+
+			<!-- Aqui se agrega la nueva seccion -->
+			<div id="newSection"></div>
+
+			<!-- Aqui se agregan o se destruyen la nueva seccion de los tableros, tambien comentarios  -->
+			<div class="container">
+				<div class="row mt-3">
+					<div class="col-2">
+						<a href="#" class="text-primary" onclick="addElement('aislamiento')"> + Nueva seccion</a>
+					</div>
+					<div class="col-2 mr-auto">
+						<a href="#" class="text-danger" onclick="removeElement()">
+							- Eliminar seccion</a>
+					</div>
+					<div class="col-auto mb-3">
+						<a alt="Add comments" class="p-1 bg-warning text-dark" onclick="addComment('aislamiento')">
+							<i class="far fa-comments"></i>
+							Comentarios
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- botones de formulario -->
+			<div class="container">
+				<div class="d-flex justify-content-end">
+					<div class="p-2">
+						<button class="btn btn-outline-primary" title="secondaryAlmacenar formulario"
+							@click="btnSave('aislamiento')">
+							<i class="fas fa-hdd"></i>
+							Guardar
+						</button>
+					</div>
+					<div class="p-2">
+						<button class="btn btn-outline-dark" onclick="window.location.href = 'hipot.html';">
+							<i class="far fa-arrow-alt-circle-right" style="color: rgb(179, 9, 3)"></i>
+							Prueba de Hi-Pot
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- fin botnoes del fornulario -->
+
+			<div id="newComment" hidden>
+				<div class="container mb-5">
+					<div class="d-flex justify-content-end">
+						<div class="p-2">
+							<button class="btn btn-primary" title="Almacenar formulario"
+								@click="btnComment('aislamiento')">
+								<i class="far fa-hdd"></i>
+								Guardar
+							</button>
+						</div>
+						<div class="d-flex justify-content-center">
+							<div class="p-2">
+								<button class="btn btn-danger" title="Enviar comentarios por mail"
+									@click="btnMail('no salgas')">
+									<i class="far fa-paper-plane"></i>
+									Enviar mail
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- fin app -->
+
+	<!-- //*Carga de los script UX -->
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/sweetalert2.js"></script>
+
+	<!-- //*Script Vue -->
+	<!-- production version, optimized for size and speed -->
+	<script src="js/vue.js"></script>
+
+	<!-- //*Conexion Axios -->
+	<script src="js/axios.js"></script>
+
+	<!-- //*Script personalizado -->
+	<script src="js/main.js"></script>
+	<script src="js/clone.js"></script>
+</body>
+
+</html>

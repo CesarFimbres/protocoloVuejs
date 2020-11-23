@@ -1,6 +1,4 @@
 var url = "db/crud.php";
-sessionStorage.setItem("idTablero", 23);
-
 var app = new Vue({
 	el: "#app",
 	data: {
@@ -13,92 +11,7 @@ var app = new Vue({
 		total: 0,
 	},
 	methods: {
-		//*BOTONES Aca se declran las funciones que se activan al presionar los diferentes botnoes
-		// btnAlta: async function () {
-		// 	const { value: formValues } = await Swal.fire({
-		// 		title: "Nuevo registro",
-		// 		html:
-		// 			'<div class="row"><label class="col-sm-3 col-form-label">Nombre</label>  <div class="col-sm-7"><input id="nombre" type="text" class="form-control"></div>  </div>  <div class="row"><label class="col-sm-3 col-form-label">Clietne</label>  <div class="col-sm-7"><input id="cliente" type="text" class="form-control"></div>  </div>  <div class="row"><label class="col-sm-3 col-form-label">Proyecto</label>  <div class="col-sm-7"><input id="proyecto" type="text" class="form-control"></div>  </div>',
-		// 		focusConfirm: false,
-		// 		showCancelButton: true,
-		// 		confirmButtonText: "Guardar",
-		// 		confirmButtonColor: "#1a237e",
-		// 		cancelButtonColor: "#039be5",
-		// 		preConfirm: () => {
-		// 			return [
-		// 				(this.nombre = document.getElementById("nombre").value),
-		// 				(this.cliente = document.getElementById("cliente").value),
-		// 				(this.proyecto = document.getElementById("proyecto").value),
-		// 			];
-		// 		},
-		// 	});
-		// 	if (this.nombre == "" || this.cliente == "" || this.proyecto == "") {
-		// 		Swal.fire("Datos incompletos", "Intentalo de nuevo", "question");
-		// 	} else {
-		// 		this.altaTablero();
-		// 		const Toast = Swal.mixin({
-		// 			toast: true,
-		// 			position: "top-end",
-		// 			showConfirmButton: false,
-		// 			timer: 3000,
-		// 			timerProgressBar: true,
-		// 			didOpen: (toast) => {
-		// 				toast.addEventListener("mouseenter", Swal.stopTimer);
-		// 				toast.addEventListener("mouseleave", Swal.resumeTimer);
-		// 			},
-		// 		});
-		// 		Toast.fire({
-		// 			icon: "success",
-		// 			title: "Registrado correctamente",
-		// 		});
-		// 	}
-		// },
-		// btnEditar: async function (id, nombre, cliente, proyecto) {
-		// 	await Swal.fire({
-		// 		title: "EDITAR",
-		// 		html:
-		// 			'<div class="form-group">  <div class="row"><label class="col-sm-3 col-form-label">Nombre</label>  <div class="col-sm-7"><input id="nombre" value="' +
-		// 			nombre +
-		// 			'" type="text" class="form-control"></div>  </div>  <div class="row"><label class="col-sm-3 col-form-label">Cliente</label>  <div class="col-sm-7"><input id="cliente" value="' +
-		// 			cliente +
-		// 			'" type="text" class="form-control"></div>  </div>  <div class="row"><label class="col-sm-3 col-form-label">Proyecto</label>  <div class="col-sm-7"><input id="proyecto" value="' +
-		// 			proyecto +
-		// 			'" type="text" class="form-control">  </div>  </div>  </div>',
-		// 		focusConfirm: false,
-		// 		showCancelButton: true,
-		// 	}).then((result) => {
-		// 		if (result.value) {
-		// 			(nombre = document.getElementById("nombre").value),
-		// 				(cliente = document.getElementById("cliente").value),
-		// 				(proyecto = document.getElementById("proyecto").value),
-		// 				this.editarTablero(id, nombre, cliente, proyecto);
-		// 			Swal.fire("¡Actualizado!", "El registro ha sido actualizado.", "success");
-		// 		}
-		// 	});
-		// },
-		// btnBorrar: function (id, nombre, cliente) {
-		// 	Swal.fire({
-		// 		title:
-		// 			"¿Está seguro de borrar el registro: " +
-		// 			id +
-		// 			"- " +
-		// 			cliente +
-		// 			" " +
-		// 			nombre +
-		// 			"?",
-		// 		type: "warning",
-		// 		showCancelButton: true,
-		// 		confirmButtonColor: "#d33",
-		// 		cancelButtonColor: "#3085d6",
-		// 		confirmButtonText: "Borrar",
-		// 	}).then((result) => {
-		// 		if (result.value) {
-		// 			this.borrarTablero(id);
-		// 			Swal.fire("¡Eliminado!", "El registro ha sido borrado.", "success");
-		// 		}
-		// 	});
-		// },
-		btnAltaInspeccion: async function () {
+		btnSave: async function (p) {
 			Swal.fire({
 				icon: "question",
 				title: "¿Deseas registrar el formulario?",
@@ -109,8 +22,26 @@ var app = new Vue({
 			}).then((result) => {
 				if (result.value) {
 					//Llama funcion para guardar resultado del cuestionario
-					console.log("Saludos desde btnAltaInspeccion");
-					this.altaInspeccion();
+
+					console.log(result.value);
+
+					this.saveRegister(p);
+				}
+			});
+		},
+
+		btnComment: async function (p) {
+			Swal.fire({
+				icon: "question",
+				title: "¿Deseas registrar los comentarios?",
+				showCancelButton: true,
+				confirmButtonColor: "#b30903",
+				cancelButtonColor: "#212121",
+				confirmButtonText: "Guardar",
+			}).then((result) => {
+				if (result.value) {
+					//Llama funcion para guardar resultado del cuestionario
+					this.saveComment(p);
 				}
 			});
 		},
@@ -136,48 +67,81 @@ var app = new Vue({
 				}
 			});
 		},
+
 		//*PROCEDIMIENTOS aqui estan las funciones que envian parametros para realiar el crud
 		//Procedimiento READ o consultar
 
-		//  altaTablero: function () {
-		// 	axios
-		// 		.post(url, {
-		// 			option: 1,
-		// 			nombre: this.nombre,
-		// 			cliente: this.cliente,
-		// 			proyecto: this.proyecto,
-		// 		})
-		// 		.then((response) => {
-		// 			this.listarTableros();
-		// 		});
-		// 		(this.nombre = ""), (this.cliente = ""), (this.proyecto = "");
-		// },
-
-		//Procedimiento para almacenar los resultados de formulario Inspeccion.
-		altaInspeccion: function () {
-			console.log("Saludos desde altaInspeccion()");
+		//Procedimiento para almacenar los resultados de formulario.
+		saveRegister: function (p) {
 			const data = this.getData();
-
-			let inspeccionData = {
-				option: 6,
+			let dataRegister = {
+				option: p,
 				idTablero: this.idTablero,
 				data,
 			};
-			console.log(inspeccionData);
-			axios.post("db/ej_axios.php", inspeccionData).then((response) => {
-				console.log(response);
+			axios.post(url, dataRegister).then((response) => {
+				console.log(response.data);
+				const Toast = Swal.mixin({
+					toast: true,
+					position: "top-end",
+					showConfirmButton: false,
+					timer: 3000,
+					timerProgressBar: true,
+					didOpen: (toast) => {
+						toast.addEventListener("mouseenter", Swal.stopTimer);
+						toast.addEventListener("mouseleave", Swal.resumeTimer);
+					},
+				});
+				Toast.fire({
+					icon: "success",
+					title: "Registro almacenado correctamente!",
+				});
+			});
+			//this.idTablero = "";
+		},
+
+		//Procedimiento para almacenar los comentarios de cada etapa del protocolo de pruebas (si los hay).
+		saveComment: function (p) {
+			const data = this.getComment(p);
+			let dataRegister = {
+				option: "comentarios",
+				idTablero: this.idTablero,
+				data,
+			};
+
+			console.log(dataRegister);
+
+			axios.post(url, dataRegister).then((response) => {
+				console.log(response.data);
+				const Toast = Swal.mixin({
+					toast: true,
+					position: "top-end",
+					showConfirmButton: false,
+					timer: 3000,
+					timerProgressBar: true,
+					didOpen: (toast) => {
+						toast.addEventListener("mouseenter", Swal.stopTimer);
+						toast.addEventListener("mouseleave", Swal.resumeTimer);
+					},
+				});
+				Toast.fire({
+					icon: "success",
+					title: "Registro almacenado correctamente!",
+				});
 			});
 			this.idTablero = "";
 		},
 
 		//Procedimiento para obtener los datos de algun formulario
 		getData: function () {
-			console.log("Saludos desde getData");
 			const textes = document.querySelectorAll('input[type="text"]');
 			const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+			const selectes = document.querySelectorAll("select");
 
 			let check = {};
 			let text = {};
+			let select = {};
+
 			let preg = "";
 			let resp = "";
 
@@ -193,24 +157,50 @@ var app = new Vue({
 				check[preg] = `${resp}`;
 			});
 
-			// let objData = { data: { checkbox: [check], textbox: [text] } };
+			selectes.forEach((elemnet, index) => {
+				preg = selectes[index].id;
+				resp = selectes[index].value;
+				select[preg] = `${resp}`;
+			});
+
 			let objData = {
 				checkbox: check,
 				textbox: text,
+				selectbox: select,
 			};
 
 			//  return objData;
 			return JSON.stringify(objData);
 		},
+		// Procedimiento para obtener los comentarios del formulario de comentarios.
+		getComment: function (p) {
+			const domResponsable = document.getElementById("responsable").value;
+			const domComentario = document.getElementById("comentario").value;
+			const domSolucion = document.getElementById("solucion").value;
+			const domEtapa = p;
 
+			let comentario = {
+				etapa: domEtapa,
+				responsable: domResponsable,
+				comentario: domComentario,
+				solucion: domSolucion,
+			};
+
+			objData = {
+				data: comentario,
+			};
+
+			return JSON.stringify(objData);
+		},
+		//Procedimiento para extraer los ultimos 7 tableros
 		listarTableros: function () {
-			axios.post(url, { option: 4 }).then((response) => {
+			axios.post(url, { option: "listar" }).then((response) => {
 				this.tableros = response.data;
 			});
 		},
 		//Procedimiento SEARCH o encontrar
 		encuentraTablero: function () {
-			axios.post(url, { option: 5, busca: this.busca }).then((response) => {
+			axios.post(url, { option: "buscar", busca: this.busca }).then((response) => {
 				this.tableros = response.data;
 			});
 		},

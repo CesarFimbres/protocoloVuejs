@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+	<script>
+		let idTablero = sessionStorage.getItem("idTablero");
+		console.log("El valor de idTablero: " + idTablero);
+	</script>
+
+	<!-- Browser tab icon -->
+	<link rel="icon" type="image/png" href="img/icoDonut.png">
+
+	<!-- Hojas de estilo -->
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="css/sweetalert2.css" />
+	<link rel="stylesheet" href="css/style.css" />
+
+	<!-- Iconos Font awesome -->
+	<script src="js/7a23168b1e.js" crossorigin="anonymous"></script>
+
+	<style>
+		td {
+			text-align: center;
+		}
+
+		.bd-callout-warning {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 1.5;
+			color: #212529;
+			text-align: left;
+			box-sizing: border-box;
+			padding: 1.25rem;
+			margin-top: 1.25rem;
+			margin-bottom: 1.25rem;
+			border: 1px solid #eee;
+			border-left-width: .25rem;
+			border-radius: .25rem;
+			border-left-color: #f0ad4e;
+		}
+
+		#dealing-with-specificity {
+			text-align: left;
+			box-sizing: border-box;
+			font-family: inherit;
+			font-weight: 500;
+			line-height: 1.2;
+			font-size: 1.5rem;
+			margin-top: 0;
+			margin-bottom: .25rem;
+			color: #17a2b8;
+		}
+	</style>
+
+	<title>Seguridad</title>
+</head>
+
+<header>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<a class="navbar-brand" href="#">Protocolo estandarizado</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+			aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"> - </span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="#"> - </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Home </a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="seguridad.html">Seguridad </span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="inspeccion.html">Inspeccion </span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="torques.html">Torques</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="continuidad.html">Continuidad</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="aislamiento.html">Aislamiento</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="hipot.html">Alta tension</a>
+				</li>
+			</ul>
+			<!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+		</div>
+	</nav>
+</header>
+
+<body>
+	<div class="container mt-2">
+		<br>
+		<h4 style="color:#446173"><i class="fa fa-universal-access"></i> SEGURIDAD </h4>
+		<hr>
+		<div class="bd-callout-warning">
+
+			<h5>Siempre utiliza equipo de proteccion personal (EPP)</h5>
+			<br>
+
+			<div class="table-responsive-sm">
+				<table class="table table-sm">
+					<tr>
+						<td>
+							<img src="img/gafas.png" alt="EPP Ojos" class="rounded-circle">
+						</td>
+						<td>
+							<img src="img/orejera.png" alt="EPP Oidos" class="rounded-circle">
+						</td>
+						<td>
+							<img src="img/cubreboca.png" alt="EPP Boca" class="rounded-circle">
+						</td>
+						<td>
+							<img src="img/chaleco.png" alt="EPP Ropa adecuada" class="rounded-circle">
+						</td>
+						<td>
+							<img src="img/guantes.png" alt="EPP Manos" class="rounded-circle">
+						</td>
+						<td>
+							<img src="img/botas.png" alt="EPP pies" class="rounded-circle">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="badge badge-secondary text-center"
+								style="background-color:#003878">Gafas</span>
+						</td>
+						<td>
+							<span class="badge badge-secondary text-center"
+								style="background-color:#003878">Orejera</span>
+						</td>
+						<td>
+							<span class="badge badge-secondary text-center"
+								style="background-color:#003878">Cubreboca</span>
+						</td>
+						<td>
+							<span class="badge badge-secondary text-center"
+								style="background-color:#003878">Chaleco</span>
+						</td>
+						<td>
+							<span class="badge badge-secondary text-center"
+								style="background-color:#003878">Guantes</span>
+						</td>
+						<td>
+							<span class="badge badge-secondary text-center"
+								style="background-color:#003878">Botas</span>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br>
+
+			<h5>Asegurar el area antes de realizar la prueba</h5>
+			<ul>
+				<li class="list-group-item">
+					<h5 class="text-warning">Buenas practicas</h5>
+					<dl><span class="badge badge-pill badge-warning">1. </span> El tablero debe estar sin energía
+						eléctrica principal o auxiliar.</dl>
+					<dl><span class="badge badge-pill badge-warning">2. </span> Establecer un perimetro de seguridad a
+						fin de delimitar el acceso al tablero en el cual se realizaran las pruebas.</dl>
+					<dl><span class="badge badge-pill badge-warning">3. </span> Retirar tapas y cubiertas de tal modo
+						que se premita el libre acceso a los componentes sujetos a prueba.</dl>
+					<dl><span class="badge badge-pill badge-warning">4. </span> Asegurar la puesta a tierra en los
+						sistemas principales de barras.</dl>
+					<dl><span class="badge badge-pill badge-warning">5. </span> Desconectar componentes electronicos,
+						equipo de medicion que sea sensibles a altos voltajes.</dl>
+				</li>
+				<li class="list-group-item">
+					<h5 class="text-warning">Verificacion de limpieza</h5>
+					<dl> <span class="badge badge-warning">ASEGURAR</span> una buena limpieza en el interior del
+						tablero.</dl>
+					<dl> <span class="badge badge-warning">REVISAR</span> dsiponer de buena iluminacion en el lugar
+						donde se realizara la prueba.</dl>
+				</li>
+			</ul>
+			</br>
+		</div>
+	</div>
+
+	<div id="app">
+
+		<!-- Aqui se agregan o se destruyen la nueva seccion de los tableros, tambien comentarios  -->
+		<div class="container">
+			<div class="row mt-3">
+				<div class="col-md-6 mr-auto">
+					<input class="form-check-input" type="checkbox" id="Check1">
+					<label class="form-check-label" for="Check1"> ¿Se cumplen las medidas de seguridad básicas?</label>
+				</div>
+				<div class="col-auto mb-3">
+					<a alt="Add comments" class="p-1 bg-warning text-dark" onclick="addComment('seguridad')">
+						<i class="far fa-comments"></i>
+						Comentarios
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- botones de formulario -->
+		<div class="container mb-5">
+			<div class="d-flex justify-content-end">
+				<div class="p-2">
+					<button class="btn btn-outline-primary" title="secondaryAlmacenar formulario"
+						@click="btnSave('seguridad')">
+						<i class="fas fa-hdd"></i>
+						Guardar
+					</button>
+				</div>
+				<div class="p-2">
+					<button class="btn btn-outline-dark" onclick="window.location.href = 'inspeccion.html';">
+						<i class="far fa-arrow-alt-circle-right" style="color: rgb(179, 9, 3)"></i>
+						Inspección visual
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- fin botnoes del fornulario -->
+
+		<div id="newComment" hidden>
+			<div class="container mb-5">
+				<div class="d-flex justify-content-end">
+					<div class="p-2">
+						<button class="btn btn-primary" title="Almacenar formulario" @click="btnComment('seguridad')">
+							<i class="far fa-hdd"></i>
+							Guardar
+						</button>
+					</div>
+					<div class="d-flex justify-content-center">
+						<div class="p-2">
+							<button class="btn btn-danger" title="Enviar comentarios por mail"
+								@click="btnMail('no salgas')">
+								<i class="far fa-paper-plane"></i>
+								Enviar mail
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div> <!-- app end -->
+
+	<!-- //*Carga de los script UX -->
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/sweetalert2.js"></script>
+
+	<!-- //*Script Vue -->
+	<!-- production version, optimized for size and speed -->
+	<script src="js/vue.js"></script>
+
+	<!-- //*Conexion Axios -->
+	<script src="js/axios.js"></script>
+
+	<!-- //*Script personalizado -->
+	<script src="js/main.js"></script>
+	<script src="js/clone.js"></script>
+</body>
+
+</html>

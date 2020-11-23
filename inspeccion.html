@@ -1,34 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- //*Hojas de estilo -->
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/sweetalert2.css" />
-    <link rel="stylesheet" href="css/style.css" />
-
-    <!-- //*Iconos Font awesome -->
-    <script src="js/7a23168b1e.js" crossorigin="anonymous"></script>
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
     <script>
         let idTablero = sessionStorage.getItem('idTablero');
         console.log('El valor de idTablero: ' + idTablero);
     </script>
 
+	<!-- Browser tab icon -->
+	<link rel="icon" type="image/png" href="img/icoDonut.png">
+
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/sweetalert2.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Iconos Font awesome -->
+    <script src="js/7a23168b1e.js" crossorigin="anonymous"></script>
+
     <title>Inspección visual</title>
 </head>
 
+<header>
+	    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Protocolo estandarizado</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"> - </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> - </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="seguridad.html">Seguridad </span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="inspeccion.html">Inspeccion </span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="torques.html">Torques</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="continuidad.html">Continuidad</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aislamiento.html">Aislamiento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="hipot.html">Alta tension</a>
+                </li>
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+        </div>
+    </nav>
+</header>
+
 <body>
-    <header>
-    </header>
-
     <div id="app">
-
-
-        <div class="container mt-5">
+        <div class="container mt-2">
             <br>
             <h4 style="color:#446173"><i class="far fa-eye"></i> INSPECCION VISUAL</h4>
             <hr>
@@ -41,34 +81,39 @@
                         <input class="form-check-input" type="checkbox"  id="Check1">
                         <label class="form-check-label" for="Check1">1 - Interruptor principal</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check2">
-                        <label class="form-check-label" for="Check2">2 - Barras de alimentacion</label>
-                        </br>
-                        <input class="form-check-input" type="checkbox"  id="Check3">
-                        <label class="form-check-label" for="Check3">3 - Zapatas de alimentacion</label>
-                        </br>
-                        <input class="form-check-input" type="checkbox"  id="Check4">
-                        <label class="form-check-label" for="Check4">4 - Para instalacion libre</label>
-                        </br>
-                        <input class="form-check-input" type="checkbox"  id="Check5">
-                        <label class="form-check-label" for="Check5">5 - Proteccion diferencial</label>
+						<input class="form-check-input" type="checkbox"  id="Check2">
+						<label class="form-check-label" for="Check5">2 - Proteccion diferencial</label>
+						</br>
+						<label class="mt-2" for="sel1">3- Alimentacion</label>
+						<select class="custom-select" id="sel1">
+							<option selected disabled>Tipo de alimentacion...</option>
+							<option>Barras</option>
+							<option>Zapata</option>
+							<option>Instalacion libre</option>
+						</select>
                         </br>
                         </br></br>
-                        <h5>Medicion</h5>
-                        <input class="form-check-input" type="checkbox"  id="Check6">
-                        <label class="form-check-label" for="Check6">6 - Analizador de red ANR</label>
-                        </br>
-                        <input class="form-check-input" type="checkbox"  id="Check7">
-                        <label class="form-check-label" for="Check7">7 - Analizador de red M2M</label>
-                        </br>
-                        <input class="form-check-input" type="checkbox"  id="Check8">
-                        <label class="form-check-label" for="Check8">8 - Controlador factor de potencia RVT</label>
-                        </br>
-                        <input class="form-check-input" type="checkbox"  id="Check9">
-                        <label class="form-check-label" for="Check9">9 - Transformador tipo dona</label>
-                        </br>
-                        <input class="form-check-input" type="checkbox"  id="Check10">
-                        <label class="form-check-label" for="Check10">10 - Sensor Neutro (4to. sensor)</label>
+						<h5>Medicion</h5>
+						
+						<input class="form-check-input" type="checkbox"  id="Check8">
+						<label class="form-check-label" for="Check8">8 - Controlador factor de potencia RVT</label>
+						</br>
+						<input class="form-check-input" type="checkbox"  id="Check9">
+						<label class="form-check-label" for="Check9">9 - Transformador tipo dona</label>
+						</br>
+						<input class="form-check-input" type="checkbox"  id="Check10">
+						<label class="form-check-label" for="Check10">10 - Sensor Neutro (4to. sensor)</label>
+						</br>
+						<label class="mt-2" for="preg6">6 - Analizador de red</label>
+						<select class="custom-select" id="preg6">
+							<option selected disabled>Modelo de analizador...</option>
+							<option>Analizador de red ANR</option>
+							<option>Analizador de red M1M</option>
+							<option>Analizador de red M2M</option>
+							<option>Analizador de red M3M</option>
+							<option>Analizador de red M4M</option>
+						</select>
+
                         </br>
                         </br></br>
                         <h5>Transformadores</h5>
@@ -82,21 +127,23 @@
                         <label class="form-check-label" for="Check13">13 - Proteccion de policarbonato instalada</label>
                         </br>
                         </br></br>
-                        <h5>Transferencias</h5>
-                        <input class="form-check-input" type="checkbox"  id="Check14">
-                        <label class="form-check-label" for="Check14">14 - Transferencia Tipo 0+0</label>
-                        </br>
-                        <input class="form-check-input" type="checkbox"  id="Check15">
-                        <label class="form-check-label" for="Check15">15 - Transferencia Tipo 1+0</label>
-                        </br>
-                        <input class="form-check-input" type="checkbox"  id="Check16">
-                        <label class="form-check-label" for="Check16">16 - Transferencia Tipo 1+1</label>
-                        </br>
-                        <input class="form-check-input" type="checkbox"  id="Check17">
-                        <label class="form-check-label" for="Check17">17 - Conmutador automatico ATS</label>
-                        </br>
-                        </br></br>
-                        <h5>Señalizacion</h5>
+						<h5>Transferencias</h5>
+						
+						<br>
+						<input class="form-check-input" type="checkbox" id="Check17">
+						<label class="form-check-label" for="Check17">17 - Conmutador automatico ATS</label>
+						<br>
+						<label class="mt-2" for="preg14">16 - Tipo de transferencia</label>
+						<select class="custom-select" id="preg14">
+							<option selected disabled>Tipo de transferencia...</option>
+							<option>Ninguna</option>
+							<option>Tipo 0+0</option>
+							<option>Tipo 1+0</option>
+							<option>Tipo 1+1</option>
+						</select>
+						
+
+                        <h5 class="mt-5">Señalizacion</h5>
                         <input class="form-check-input" type="checkbox"  id="Check18">
                         <label class="form-check-label" for="Check18">18 - Lineas Neutro</label>
                         </br>
@@ -216,16 +263,12 @@
                             47 - Las etiquetas se hicieron en conformidad con el diagrama electrico del cliente
                         </label>
                         <hr>
-                        <label for="tst">Campo ejemplo</label>
-                        <input type="text" class="form-control" id="tst0" placeholder="Ingrese dato0">
-                        <label for="tst">Campo ejemplo</label>
-                        <input type="text" class="form-control" id="tst1" placeholder="Ingrese dato1">
-                        <label for="tst">Campo ejemplo</label>
-                        <input type="text" class="form-control" id="tst2" placeholder="Ingrese dato2">
-                        <label for="tst">Campo ejemplo</label>
-                        <input type="text" class="form-control" id="tst3" placeholder="Ingrese dato3">
-                        <label for="tst">Campo ejemplo</label>
-                        <input type="text" class="form-control" id="tst4" placeholder="Ingrese dato4">
+                        <label for="tst">Auditor</label>
+                        <input type="text" class="form-control" id="tst0" placeholder="Quien realizo la Inspeccion?">
+                        <label for="tst">Comentarios</label>
+						<input type="text" class="form-control" id="tst1" placeholder="Ingrese comentario">
+						
+
                     </div>
                 </div> <!-- class="row" end -->
             </form>
@@ -240,15 +283,22 @@
                     <button
                         class="btn btn-outline-primary"
                         title="Almacenar formulario"
-                        @click="btnAltaInspeccion()"
+                        @click="btnSave('inspeccion')"
 						> 
 						<i class="fas fa-hdd"></i>    
 						Guardar
                 	</button>
                 </div>
                 <div class="p-2">
-                    <button class="btn btn-outline-dark" onclick="window.location.href = 'reporte.html';">
-                        <i class="far fa-arrow-alt-circle-right" style="color: rgb(179, 9, 3);"></i>
+					<button 
+						class="btn btn-outline-dark" 
+						onclick="window.location.href = 'torques.html';"
+						>
+						<i 
+						class="far fa-arrow-alt-circle-right" 
+						style="color: rgb(179, 9, 3);"
+						>
+						</i>
                         Prueba de torques
                     </button>
                 </div>
@@ -259,10 +309,6 @@
 
     </div>
     <!-- fin app -->
-
-
-
-
 
     <!-- //*Carga de los script UX -->
     <script src="js/jquery-3.5.1.min.js"></script>

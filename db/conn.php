@@ -10,7 +10,7 @@
                 $conn = new PDO("mysql:host=".server."; dbname=".db, user, password, $options);
                 return $conn;
             }catch (Exception $e){
-                die("El error de Conexión es: ". $e->getMessage());
+                die("Ups! hubo un error en la conexión es: ". $e->getMessage());
             }
         }
     }
