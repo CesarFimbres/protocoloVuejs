@@ -3,15 +3,15 @@
 
 <head>
     <meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <script>
         let idTablero = sessionStorage.getItem('idTablero');
         console.log('El valor de idTablero: ' + idTablero);
     </script>
 
-	<!-- Browser tab icon -->
-	<link rel="icon" type="image/png" href="img/icoDonut.png">
+    <!-- Browser tab icon -->
+    <link rel="icon" type="image/png" href="img/icoDonut.png">
 
     <!-- Hojas de estilo -->
     <link rel="stylesheet" href="css/bootstrap.css" />
@@ -25,9 +25,10 @@
 </head>
 
 <header>
-	    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#">Protocolo estandarizado</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"> - </span>
         </button>
 
@@ -78,94 +79,94 @@
                     <!-- primer columna contenedora -->
                     <div class="col">
                         <h5>Interruptor principal</h5>
-                        <input class="form-check-input" type="checkbox"  id="Check1">
+                        <input class="form-check-input" type="checkbox" id="Check1">
                         <label class="form-check-label" for="Check1">1 - Interruptor principal</label>
                         </br>
-						<input class="form-check-input" type="checkbox"  id="Check2">
-						<label class="form-check-label" for="Check5">2 - Proteccion diferencial</label>
-						</br>
-						<label class="mt-2" for="sel1">3- Alimentacion</label>
-						<select class="custom-select" id="sel1">
-							<option selected disabled>Tipo de alimentacion...</option>
-							<option>Barras</option>
-							<option>Zapata</option>
-							<option>Instalacion libre</option>
-						</select>
+                        <input class="form-check-input" type="checkbox" id="Check2">
+                        <label class="form-check-label" for="Check5">2 - Proteccion diferencial</label>
+                        </br>
+                        <label class="mt-2" for="sel1">3- Alimentacion</label>
+                        <select class="custom-select" id="sel1">
+                            <option selected disabled>Tipo de alimentacion...</option>
+                            <option>Barras</option>
+                            <option>Zapata</option>
+                            <option>Instalacion libre</option>
+                        </select>
                         </br>
                         </br></br>
-						<h5>Medicion</h5>
-						
-						<input class="form-check-input" type="checkbox"  id="Check8">
-						<label class="form-check-label" for="Check8">8 - Controlador factor de potencia RVT</label>
-						</br>
-						<input class="form-check-input" type="checkbox"  id="Check9">
-						<label class="form-check-label" for="Check9">9 - Transformador tipo dona</label>
-						</br>
-						<input class="form-check-input" type="checkbox"  id="Check10">
-						<label class="form-check-label" for="Check10">10 - Sensor Neutro (4to. sensor)</label>
-						</br>
-						<label class="mt-2" for="preg6">6 - Analizador de red</label>
-						<select class="custom-select" id="preg6">
-							<option selected disabled>Modelo de analizador...</option>
-							<option>Analizador de red ANR</option>
-							<option>Analizador de red M1M</option>
-							<option>Analizador de red M2M</option>
-							<option>Analizador de red M3M</option>
-							<option>Analizador de red M4M</option>
-						</select>
+                        <h5>Medicion</h5>
+
+                        <input class="form-check-input" type="checkbox" id="Check8">
+                        <label class="form-check-label" for="Check8">8 - Controlador factor de potencia RVT</label>
+                        </br>
+                        <input class="form-check-input" type="checkbox" id="Check9">
+                        <label class="form-check-label" for="Check9">9 - Transformador tipo dona</label>
+                        </br>
+                        <input class="form-check-input" type="checkbox" id="Check10">
+                        <label class="form-check-label" for="Check10">10 - Sensor Neutro (4to. sensor)</label>
+                        </br>
+                        <label class="mt-2" for="preg6">6 - Analizador de red</label>
+                        <select class="custom-select" id="preg6">
+                            <option selected disabled>Modelo de analizador...</option>
+                            <option>Analizador de red ANR</option>
+                            <option>Analizador de red M1M</option>
+                            <option>Analizador de red M2M</option>
+                            <option>Analizador de red M3M</option>
+                            <option>Analizador de red M4M</option>
+                        </select>
 
                         </br>
                         </br></br>
                         <h5>Transformadores</h5>
-                        <input class="form-check-input" type="checkbox"  id="Check11">
+                        <input class="form-check-input" type="checkbox" id="Check11">
                         <label class="form-check-label" for="Check11">11 - Transformador de control</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check12">
+                        <input class="form-check-input" type="checkbox" id="Check12">
                         <label class="form-check-label" for="Check12">12 - Transformador de potencia</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check13">
+                        <input class="form-check-input" type="checkbox" id="Check13">
                         <label class="form-check-label" for="Check13">13 - Proteccion de policarbonato instalada</label>
                         </br>
                         </br></br>
-						<h5>Transferencias</h5>
-						
-						<br>
-						<input class="form-check-input" type="checkbox" id="Check17">
-						<label class="form-check-label" for="Check17">17 - Conmutador automatico ATS</label>
-						<br>
-						<label class="mt-2" for="preg14">16 - Tipo de transferencia</label>
-						<select class="custom-select" id="preg14">
-							<option selected disabled>Tipo de transferencia...</option>
-							<option>Ninguna</option>
-							<option>Tipo 0+0</option>
-							<option>Tipo 1+0</option>
-							<option>Tipo 1+1</option>
-						</select>
-						
+                        <h5>Transferencias</h5>
+
+                        <br>
+                        <input class="form-check-input" type="checkbox" id="Check17">
+                        <label class="form-check-label" for="Check17">17 - Conmutador automatico ATS</label>
+                        <br>
+                        <label class="mt-2" for="preg14">16 - Tipo de transferencia</label>
+                        <select class="custom-select" id="preg14">
+                            <option selected disabled>Tipo de transferencia...</option>
+                            <option>Ninguna</option>
+                            <option>Tipo 0+0</option>
+                            <option>Tipo 1+0</option>
+                            <option>Tipo 1+1</option>
+                        </select>
+
 
                         <h5 class="mt-5">Señalizacion</h5>
-                        <input class="form-check-input" type="checkbox"  id="Check18">
+                        <input class="form-check-input" type="checkbox" id="Check18">
                         <label class="form-check-label" for="Check18">18 - Lineas Neutro</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check19">
+                        <input class="form-check-input" type="checkbox" id="Check19">
                         <label class="form-check-label" for="Check19">19 - Lineas fase 1</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check20">
+                        <input class="form-check-input" type="checkbox" id="Check20">
                         <label class="form-check-label" for="Check20">20 - Lineas fase 2</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check21">
+                        <input class="form-check-input" type="checkbox" id="Check21">
                         <label class="form-check-label" for="Check21">21 - Lienas fase 3</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check22">
+                        <input class="form-check-input" type="checkbox" id="Check22">
                         <label class="form-check-label" for="Check22">22 - Tierra</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check23">
+                        <input class="form-check-input" type="checkbox" id="Check23">
                         <label class="form-check-label" for="Check23">23 - Tierra aislada</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check24">
+                        <input class="form-check-input" type="checkbox" id="Check24">
                         <label class="form-check-label" for="Check24">24 - Cables de control</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check25">
+                        <input class="form-check-input" type="checkbox" id="Check25">
                         <label class="form-check-label" for="Check25">25 - Interruptores / equipos</label>
                         </br>
                         </br></br>
@@ -173,92 +174,92 @@
                     <!-- segunda columna contenedora -->
                     <div class="col">
                         <h5>Inspeccion interna al tablero</h5>
-                        <input class="form-check-input" type="checkbox"  id="Check26">
+                        <input class="form-check-input" type="checkbox" id="Check26">
                         <label class="form-check-label" for="Check26">26 - Interruptores y equipos instalados</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check27">
+                        <input class="form-check-input" type="checkbox" id="Check27">
                         <label class="form-check-label" for="Check27">27 - El cableado de fuerza esta peinado y
                             conexionado</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check28">
+                        <input class="form-check-input" type="checkbox" id="Check28">
                         <label class="form-check-label" for="Check28">28 - El cableado derivado esta peinado y
                             conexionado</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check29">
+                        <input class="form-check-input" type="checkbox" id="Check29">
                         <label class="form-check-label" for="Check29">29 - El cableado de control esta peinado y
                             conexionado</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check30">
+                        <input class="form-check-input" type="checkbox" id="Check30">
                         <label class="form-check-label" for="Check30">30 - Transformador aterrizado</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check31">
+                        <input class="form-check-input" type="checkbox" id="Check31">
                         <label class="form-check-label" for="Check31">31 - Zapatas conectadas a transformador</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check32">
+                        <input class="form-check-input" type="checkbox" id="Check32">
                         <label class="form-check-label" for="Check32">32 - Manga termocontractil ajustada</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check33">
+                        <input class="form-check-input" type="checkbox" id="Check33">
                         <label class="form-check-label" for="Check33">33 - Acrilico de proteccion instalado</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check34">
+                        <input class="form-check-input" type="checkbox" id="Check34">
                         <label class="form-check-label" for="Check34">34 - Conexion a tierra tablero (parte
                             inferior)</label>
                         </br>
                         </br></br>
                         <h5>Inspeccion externa al tablero</h5>
-                        <input class="form-check-input" type="checkbox"  id="Check35">
+                        <input class="form-check-input" type="checkbox" id="Check35">
                         <label class="form-check-label" for="Check35">35 - El tablero y todas las partes que lo componen
                             son
                             resistente a la corrosion o esta protegido contra ella</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check36">
+                        <input class="form-check-input" type="checkbox" id="Check36">
                         <label class="form-check-label" for="Check36">36 - El gabinete es hermetico de acceso solo
                             frontal</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check37">
+                        <input class="form-check-input" type="checkbox" id="Check37">
                         <label class="form-check-label" for="Check37">37 - Las puertas frontales tienen cerradura o
                             candado para
                             mantenerlas cerradas</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check38">
+                        <input class="form-check-input" type="checkbox" id="Check38">
                         <label class="form-check-label" for="Check38">38 - Cuenta con luces piloto que indiquen el
                             funcionamiento del equipo</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check39">
+                        <input class="form-check-input" type="checkbox" id="Check39">
                         <label class="form-check-label" for="Check39">39 - Cuenta con tapas interiores que no permitan
                             el acceso
                             a partes energizadas</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check40">
+                        <input class="form-check-input" type="checkbox" id="Check40">
                         <label class="form-check-label" for="Check40">40 - Las puertas estan aterrizadas</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check41">
+                        <input class="form-check-input" type="checkbox" id="Check41">
                         <label class="form-check-label" for="Check41">41 - Cuenta con boton para paro de
                             emergencia</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check42">
+                        <input class="form-check-input" type="checkbox" id="Check42">
                         <label class="form-check-label" for="Check42">42 - Señalizacion de riesgo electrico en
                             puerta</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check43">
+                        <input class="form-check-input" type="checkbox" id="Check43">
                         <label class="form-check-label" for="Check43">43 - Señalizacion de tension de servicio y
                             corriente
                             nominal</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check44">
+                        <input class="form-check-input" type="checkbox" id="Check44">
                         <label class="form-check-label" for="Check44">44 - Señalizacion de numero de fases</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check45">
+                        <input class="form-check-input" type="checkbox" id="Check45">
                         <label class="form-check-label" for="Check45">45 - Secciones de tablero bien identificadas y
                             definidas</label>
                         </br>
-                        <input class="form-check-input" type="checkbox"  id="Check46">
+                        <input class="form-check-input" type="checkbox" id="Check46">
                         <label class="form-check-label" for="Check46">46 - Se identifican todos los interrptores
                             principales</label>
                         </br>
                         </br></br>
                         <h5>Etiquetado de tablero</h5>
-                        <input class="form-check-input" type="checkbox"  id="Check47">
+                        <input class="form-check-input" type="checkbox" id="Check47">
                         <label class="form-check-label" for="Check47">
                             47 - Las etiquetas se hicieron en conformidad con el diagrama electrico del cliente
                         </label>
@@ -266,39 +267,42 @@
                         <label for="tst">Auditor</label>
                         <input type="text" class="form-control" id="tst0" placeholder="Quien realizo la Inspeccion?">
                         <label for="tst">Comentarios</label>
-						<input type="text" class="form-control" id="tst1" placeholder="Ingrese comentario">
-						
+                        <input type="text" class="form-control" id="tst1" placeholder="Ingrese comentario">
+                        <br>
 
                     </div>
                 </div> <!-- class="row" end -->
             </form>
 
+        </div>
 
+        <!-- Aqui se agregan o se destruyen la nueva seccion de los tableros, tambien comentarios  -->
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-md-6 mr-auto">
+                </div>
+                <div class="col-auto mb-3">
+                    <a alt="Add comments" class="p-1 bg-warning text-dark" onclick="addComment('inspeccion')">
+                        <i class="far fa-comments"></i>
+                        Comentarios
+                    </a>
+                </div>
+            </div>
         </div>
 
         <!-- botones de formulario -->
-        <div class="container">
+        <div class="container mb-5">
             <div class="d-flex justify-content-end">
                 <div class="p-2">
-                    <button
-                        class="btn btn-outline-primary"
-                        title="Almacenar formulario"
-                        @click="btnSave('inspeccion')"
-						> 
-						<i class="fas fa-hdd"></i>    
-						Guardar
-                	</button>
+                    <button class="btn btn-outline-primary" title="Almacenar formulario" @click="btnSave('inspeccion')">
+                        <i class="fas fa-hdd"></i>
+                        Guardar
+                    </button>
                 </div>
                 <div class="p-2">
-					<button 
-						class="btn btn-outline-dark" 
-						onclick="window.location.href = 'torques.html';"
-						>
-						<i 
-						class="far fa-arrow-alt-circle-right" 
-						style="color: rgb(179, 9, 3);"
-						>
-						</i>
+                    <button class="btn btn-outline-dark" onclick="window.location.href = 'torques.html';">
+                        <i class="far fa-arrow-alt-circle-right" style="color: rgb(179, 9, 3);">
+                        </i>
                         Prueba de torques
                     </button>
                 </div>
@@ -306,6 +310,27 @@
         </div>
         <!-- fin botnoes del fornulario -->
 
+        <div id="newComment" hidden>
+            <div class="container mb-5">
+                <div class="d-flex justify-content-end">
+                    <div class="p-2">
+                        <button class="btn btn-primary" title="Almacenar formulario" @click="btnComment('inspeccion')">
+                            <i class="far fa-hdd"></i>
+                            Guardar
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="p-2">
+                            <button class="btn btn-danger" title="Enviar comentarios por mail"
+                                @click="btnMail('no salgas')">
+                                <i class="far fa-paper-plane"></i>
+                                Enviar mail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
     <!-- fin app -->
@@ -325,6 +350,7 @@
 
     <!-- //*Script personalizado -->
     <script src="js/main.js"></script>
+    <script src="js/clone.js"></script>
 </body>
 
 </html>
