@@ -22,9 +22,7 @@ var app = new Vue({
 			}).then((result) => {
 				if (result.value) {
 					//Llama funcion para guardar resultado del cuestionario
-
 					console.log(result.value);
-
 					this.saveRegister(p);
 				}
 			});
